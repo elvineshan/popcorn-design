@@ -1,0 +1,310 @@
+/* 
+Project Name: Front End Developer Test
+Client: Popcorn Design
+Author: Eshan Mohabeer
+*/
+
+/******************************************
+/* SENSIBLE DEFAULTS                   
+/*******************************************/
+
+* {
+     box-sizing: border-box;
+}
+img {
+	max-width:100%;
+}
+
+/******************************************
+/* LAYOUT                   
+/*******************************************/
+
+.site-container {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.site-content {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+/******************************************
+/* HELPER CLASSES
+/*******************************************/
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+     content: " ";
+     display: table;
+}
+.clearfix:after {
+     clear:both;
+}
+
+.is-hidden {
+     display: none;
+}
+.is-visible {
+     display: block;
+}
+
+/******************************************
+/* GRID LAYOUT
+/*******************************************/
+
+.grid-row { 
+  margin:0;
+}
+.grid-column {
+    float:left;
+    margin:0;
+    /*padding:0 20px; /* match to .grid-container */
+/*     border:1px solid; */
+    	
+}
+.grid-quarter       { width:25%; }
+.grid-third         { width:33.333%; }
+.grid-half          { width:50%; }
+.grid-two-third     { width:66.667%; }
+.grid-three-quarter { width:75%; }
+.grid-whole         { width:100%; }
+
+/******************************************
+/* ADDITIONAL STYLES                   
+/*******************************************/
+
+html{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12pt;
+	background-color: #fff;
+}
+
+/*import and style the main image*/
+.site-feature{
+	background-image: url("../images/background-image.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment:fixed; /*creates a parallax-like scrolling effect with the background image*/
+    height: 120vh;
+}
+
+/*set header transparency*/
+.site-header{
+	background-color: rgba(0,0,0,0.8);
+}
+
+header{
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+#logo{
+	float: left;
+}
+
+.navbar{
+	float: right;
+}
+
+.navbar-list{
+	list-style: none;
+}
+
+.navbar-list li{
+	float: left;
+	padding-left: 40px;
+}
+
+.navbar-list li a{
+	text-decoration: none;
+	color: #fff;
+}
+
+/*style the hamburger menu icon to be used on mobile screens*/
+.nav-icon,
+.nav-icon:before,
+.nav-icon:after {
+	content:"";
+	position:absolute;
+	right:1em;
+	width:2em;
+	height:2em;
+	border-top:0.25em solid #fff;
+}
+
+.nav-icon {
+	display:none;
+	top:0.5em;
+	margin-top: 1em;
+}
+
+/*set the hamburger menu to appear on smaller mobile-sized screens*/
+@media screen and (max-width: 767px) {
+	.nav-icon {
+		display:block;
+	}
+	.navbar-list {
+		display:none;
+	}
+	.navbar-list li{
+		display: block;
+		width: 100%;
+		font-size: 2em;
+		text-align: right;
+		padding: 25px 10px;
+	}
+}
+
+.nav-icon:before {
+	top:0.25em;
+	right:0;
+}
+
+.nav-icon:after {
+	top:0.75em;
+	right:0;
+}
+
+/*main headline*/
+.site-feature h1{
+	color: #fff;
+	font-size: 7vw;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 20vw;
+}
+
+.about-us{
+	text-align: center;
+	padding: 70px 0px;
+}
+
+.call-to-action{
+	background-color: #ccc;
+	padding: 70px 0px;
+}
+
+.call-to-action-buttons{
+	display: flex;
+	justify-content: space-around;
+}
+
+.button{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button p{
+	margin-bottom: 0;
+}
+
+.button p a{
+	text-decoration: none;
+	color: #000;
+}
+
+/*visual feedback for hovering over buttons*/
+.button img:hover{
+	opacity: 0.5;
+}
+
+.button p a:hover{
+	color: #777;
+}
+
+.address-details{
+	float: left;
+	padding: 120px 0px 0px 0px;
+}
+
+.address-details span{
+	font-weight: bold;
+}
+
+.address-details p{
+	padding-bottom: 10px;
+}
+
+.contact-image{
+	float: right;
+	width: 60%;
+}
+
+.site-footer{
+	background-color: #ddd;
+	padding: 22px 0px;
+	clear: both;
+}
+
+
+/*various media queries for adjustments to suit different sized screens*/
+
+@media screen and (max-width: 1024px) {
+	/*adjust height to reveal main image and headline correctly*/
+	.site-feature{
+		height: 45vh;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#logo{
+		width: 38vw;
+		padding-left: 10px;
+	}
+	.site-feature{
+		/*use smaller feature image for smaller sized screens*/
+		background-image: url("../images/background-image-small.png");
+		height: 55vh;
+	}
+    .about-us{
+    	padding: 30px;
+    }
+    .site-feature h1{
+    	padding-top: 14vw;
+    }
+    .contact-image{
+    	display: none; /*hide the image on smaller screens as per specification*/
+    }
+    .call-to-action-container{
+    	height: 40vh;
+    }
+    .call-to-action-buttons{
+    	display: block;
+    }
+    .button{
+    	padding: 15px;
+    }
+    .address-details{
+    	font-size: 14pt;
+    	float: none;
+		text-align: center;
+		padding: 20px;
+	}
+	.site-footer{
+		font-size: 14pt;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	/*fix padding*/
+	.address-details{
+		padding: 30px 0px 0px 0px;
+	}
+}
+
+@media screen and (width: 768px) {
+	/*manual fix specifically for 768px width screens, such as iPad. (added after testing)*/
+	.address-details{
+    	padding: 0px;
+	}
+}
+
+@media screen and (max-width: 376px) {
+	.call-to-action-container{
+    	height: 50vh;
+	}
+}
